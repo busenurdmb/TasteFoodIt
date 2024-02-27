@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/DetailLayout/Index.cshtml";
+}
+
+@Html.Action("PartialChef", "Default")
+<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+                
+            </div>
+            @Html.Action("PartialAbout", "Default")
+        </div>
+    </div>
+</section>
+
+
+

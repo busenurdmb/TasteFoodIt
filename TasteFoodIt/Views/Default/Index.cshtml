@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("PartialHead","Default")
+<body>
+
+    @Html.Action("PartialNavbarInfo", "Default")
+
+
+    @Html.Action("PartialNavbar", "Default")
+
+    <!-- END nav -->
+
+
+    @Html.Action("PartialSlider", "Default")
+
+    <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+                    <form action="#" class="appointment-form">
+                        <h3 class="mb-3">Book your Table</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-wrap">
+                                        <div class="icon"><span class="fa fa-calendar"></span></div>
+                                        <input type="text" class="form-control book_date" placeholder="Check-In">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-wrap">
+                                        <div class="icon"><span class="fa fa-clock-o"></span></div>
+                                        <input type="text" class="form-control book_time" placeholder="Time">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                            <select name="" id="" class="form-control">
+                                                <option value="">Guest</option>
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                                <option value="">4</option>
+                                                <option value="">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                @Html.Action("PartialAbout", "Default")
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="ftco-section ftco-intro" style="background-image: url(/Templates/tasteit-master/images/bg_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <span>Hemen Yerinizi Ayırın</span>
+                    <h2>Özel Buluşmalar &amp; Happy Hours</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @Html.Action("PartialMenu", "Default")
+
+    @Html.Action("PartialTestimonial", "Default")
+
+    @Html.Action("PartialChef", "Default")
+
+
+    @Html.Action("PartialInfo", "Default")
+
+    @Html.Action("PartialReservation", "Default")
+
+    @Html.Action("PartialFooter", "Default")
+
+
+
+
+    @Html.Action("PartialScript", "Default");
+
+</body>
+</html>

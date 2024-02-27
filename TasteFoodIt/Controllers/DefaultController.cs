@@ -16,5 +16,68 @@ namespace TasteFoodIt.Controllers
         {
             return View();
         }
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScript()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialNavbarInfo()
+        {
+            ViewBag.phone = context.Addresses.Select(x => x.Phone).FirstOrDefault();
+            ViewBag.email = context.Addresses.Select(x => x.Email).FirstOrDefault();
+            ViewBag.description = context.Addresses.Select(x => x.Description).FirstOrDefault();
+            return PartialView();
+        }
+        public PartialViewResult PartialNavbar()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialSlider()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialAbout()
+        {
+            ViewBag.title = context.Abouts.Select(x => x.Title).FirstOrDefault();
+            ViewBag.description = context.Abouts.Select(x => x.Description).FirstOrDefault();
+            ViewBag.ImageUrl = context.Abouts.Select(x => x.ImageUrl).FirstOrDefault();
+            return PartialView();
+        }
+        public PartialViewResult PartialMenu()
+        {
+            var value = context.Products.ToList();
+            return PartialView(value);
+        }
+        public PartialViewResult PartialTestimonial()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialChef()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialInfo()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialReservation()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult PartialFooter()
+        {
+
+            return PartialView();
+        }
+       
     }
 }
