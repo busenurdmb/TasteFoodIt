@@ -21,6 +21,7 @@ namespace TasteFoodIt.Controllers
         public PartialViewResult PartialAboutStatistic()
         {
             ViewBag.FoodCount = context.Products.Count();
+            
             return PartialView();
         }
        
