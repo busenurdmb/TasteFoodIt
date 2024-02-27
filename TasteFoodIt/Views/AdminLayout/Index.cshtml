@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "AdminLayout")
+
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        @Html.Action("PartialSidebar", "AdminLayout")
+
+        <!-- Sidebar -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- TopBar -->
+                @Html.Action("PartialNavbar", "AdminLayout")
+
+                <!-- Topbar -->
+                <!-- Container Fluid-->
+                @RenderBody()
+                <!---Container Fluid-->
+            </div>
+            <!-- Footer -->
+            @Html.Action("PartialFooter", "AdminLayout")
+
+            <!-- Footer -->
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    @Html.Action("PartialScript", "AdminLayout")
+
+
+</body>
+
+</html>
+
+

@@ -1,4 +1,5 @@
-﻿@model List<TasteFoodIt.Entity.Product>
+﻿﻿@model List<TasteFoodIt.Entity.Product>
+@{ var count = 0;}
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-2">
@@ -8,35 +9,101 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-6 col-lg-4">
-                    <div class="menu-wrap">
-                        <div class="heading-menu text-center ftco-animate">
-                            <h3>Breakfast</h3>
-                        </div>
 
-                        <div class="menus d-flex ftco-animate">
-                            <div class="menu-img img" style="background-image: url(@item.ImageUrl);"></div>
-                            <div class="text">
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>@item.ProductName</h3>
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-wrap">
+                    <div class="heading-menu text-center ftco-animate">
+                        <h3>FassFood</h3>
+                    </div>.
+                    @foreach (var item in Model)
+                    {
+                        if (item.CategoryId == 1 && count<3)
+                        {
+                            <div class="menus d-flex ftco-animate">
+                                <div class="menu-img img" style="background-image: url(@item.ImageUrl);"></div>
+                                <div class="text">
+                                    <div class="d-flex">
+                                        <div class="one-half">
+                                            <h3>@item.ProductName</h3>
+                                        </div>
+                                        <div class="one-forth">
+                                            <span class="price">@item.Price ₺</span>
+                                        </div>
                                     </div>
-                                    <div class="one-forth">
-                                        <span class="price">@item.Price ₺</span>
-                                    </div>
+                                    <p><span>@item.Description</span></p>
                                 </div>
-                                <p><span>@item.Description</span></p>
                             </div>
-                        </div>
+                            count++;
+                        }
 
-                        <span class="flat flaticon-bread" style="left: 0;"></span>
-                        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-                    </div>
+                    }
+
+                    <span class="flat flaticon-bread" style="left: 0;"></span>
+                    <span class="flat flaticon-breakfast" style="right: 0;"></span>
                 </div>
-            }
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-wrap">
+                    <div class="heading-menu text-center ftco-animate">
+                        <h3>Breakfast</h3>
+                    </div>.
+                    @foreach (var item in Model)
+                    {
+                        if (item.CategoryId == 6)
+                        {
 
+                            <div class="menus d-flex ftco-animate">
+                                <div class="menu-img img" style="background-image: url(@item.ImageUrl);"></div>
+                                <div class="text">
+                                    <div class="d-flex">
+                                        <div class="one-half">
+                                            <h3>@item.ProductName</h3>
+                                        </div>
+                                        <div class="one-forth">
+                                            <span class="price">@item.Price ₺</span>
+                                        </div>
+                                    </div>
+                                    <p><span>@item.Description</span></p>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                    <span class="flat flaticon-bread" style="left: 0;"></span>
+                    <span class="flat flaticon-breakfast" style="right: 0;"></span>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="menu-wrap">
+                    <div class="heading-menu text-center ftco-animate">
+                        <h3>İçecekler</h3>
+                    </div>.
+                    @foreach (var item in Model)
+                    {
+                        if (item.CategoryId == 6)
+                        {
+
+                            <div class="menus d-flex ftco-animate">
+                                <div class="menu-img img" style="background-image: url(@item.ImageUrl);"></div>
+                                <div class="text">
+                                    <div class="d-flex">
+                                        <div class="one-half">
+                                            <h3>@item.ProductName</h3>
+                                        </div>
+                                        <div class="one-forth">
+                                            <span class="price">@item.Price ₺</span>
+                                        </div>
+                                    </div>
+                                    <p><span>@item.Description</span></p>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                    <span class="flat flaticon-bread" style="left: 0;"></span>
+                    <span class="flat flaticon-breakfast" style="right: 0;"></span>
+                </div>
+            </div>
 
 
 
