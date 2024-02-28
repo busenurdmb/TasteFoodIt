@@ -15,6 +15,7 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult ContactList()
         {
+            ViewBag.name = "İletişim";
             var values = context.Contacts.ToList();
             return View(values);
         }

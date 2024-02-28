@@ -15,17 +15,20 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult ChefList()
         {
+            ViewBag.name = "Chef";
             var values = context.Chef.ToList();
             return View(values);
         }
         [HttpGet]
         public ActionResult CreateChef()
         {
+            ViewBag.name = "Chef";
             return View();
         }
         [HttpPost]
         public ActionResult CreateChef(Chef Chef)
         {
+            Chef.ImageUrl = "/Templates/tasteit-master/images/" + Chef.ImageUrl;
             context.Chef.Add(Chef);
             context.SaveChanges();
             return RedirectToAction("ChefList");
@@ -50,8 +53,11 @@ namespace TasteFoodIt.Controllers
             var value = context.Chef.Find(Chef.ChefId);
             value.NameSurname =Chef.NameSurname;
             value.Title =Chef.Title;
-            value.ImageUrl =Chef.ImageUrl;
-            value.Description = Chef.Description;
+            if (Chef.ImageUrl != null)
+            {
+                value.ImageUrl = "/Templates/tasteit-master/images/" + Chef.ImageUrl;
+            }
+           value.Description = Chef.Description;
            context.SaveChanges();
             return RedirectToAction("ChefList");
 

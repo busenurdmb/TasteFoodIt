@@ -1,8 +1,11 @@
-﻿@model List<TasteFoodIt.Entity.Product>
+﻿@model List<TasteFoodIt.Entity.Chef>
 @{
-    ViewBag.Title = "ProductList";
+    ViewBag.Title = "ChefList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
+
+
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -21,7 +24,31 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">@ViewBag.name Tablosu</h6>
                 </div>
-
+            
+            @if (Model.Count == 0)
+            {
+               
+                    <div class="card-body">
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">Hakkımda kısmında bir veri bulunmamaktadır!</h4>
+                        </div>
+                        <a href="#" class="btn btn-primary">Hakkımda Kısmına veri ekle</a>
+                    </div>
+                
+                
+            }
+            else
+            {
+            <div class="container">
+                <div class="alert alert-light alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">Uyarıyı kapat</span>
+                    </button>
+                    <h6><i class="fas fa-exclamation-triangle"></i><b> Bilgi!</b></h6>
+                    Tema bütünlüğünün bozulmaması için 4 veriden başka veri girmeyiniz
+                </div>
+            </div>
+              
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
@@ -31,9 +58,7 @@
                                 <th>Açıklama</th>
                                 <th>Fiyat</th>
                                 <th>Resim</th>
-                                <th>Durum</th>
-
-                                <th>Sil</th>
+                               <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
                         </thead>
@@ -41,39 +66,16 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td><a href="#">@item.ProductId</a></td>
-                                    <td>@item.ProductName</td>
+                                    <td><a href="#">@item.ChefId</a></td>
+                                    <td>@item.NameSurname</td>
+                                    <td>@item.Title</td>
                                     <td>@item.Description</td>
-                                    <td>@item.Price</td>
                                     <td>
                                         <img style="width: 50%; height: 50%;" src="@item.ImageUrl" alt="@item.ImageUrl" class="img-thumbnail">
                                     </td>
-                                    @if (item.IsActive == bool.Parse("true"))
-                                    {
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-check"></i>
-                                                </span>
-                                                <span class="text">@item.IsActive</span>
-                                            </a>
 
-
-                                        </td>
-                                    }
-                                    @if (item.IsActive == bool.Parse("false"))
-                                    {
-                                        <td>
-                                            <a href="#" class="btn btn-dark btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-exclamation-circle"></i>
-                                                </span>
-                                                <span class="text">@item.IsActive</span>
-                                            </a>
-                                        </td>
-                                    }
-                                      <td>
-                                        <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger btn-icon-split">
+                                    <td>
+                                        <a href="/AdminChef/DeleteChef/@item.ChefId" class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
@@ -81,7 +83,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning btn-icon-split">
+                                        <a href="/AdminChef/UpdateChef/@item.ChefId" class="btn btn-warning btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
@@ -95,18 +97,15 @@
 
                         </tbody>
                     </table>
-                    <a href="/AdminProduct/CreateProduct" class="btn btn-primary">Yeni Ürün Girişi</a>
+                    <a href="/AdminChef/CreateChef" class="btn btn-primary">Ekle</a>
                 </div>
 
+            }
+            <div class="card-footer"></div>
 
-                <div class="card-footer"></div>
-
-            </div>
         </div>
     </div>
-
-    <!--Row-->
-    
-
 </div>
+    </div>
 
+<!--Row-->

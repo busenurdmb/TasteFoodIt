@@ -1,8 +1,11 @@
-﻿@model TasteFoodIt.Entity.Product
+﻿@model TasteFoodIt.Entity.About
 @{
-    ViewBag.Title = "UpdateProduct";
+    ViewBag.Title = "UpdateAbout";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
+
+
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -24,16 +27,11 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            @Html.HiddenFor(x => x.ProductId)
-                            <label for="exampleCategory">Yemek Adı</label>
-                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
-                            <label for="exampleCategory">Yemek Açıklama</label>
-                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })    <label for="exampleCategory">Yemek Adı</label>
-                            <label for="exampleCategory">Yemek fiyat</label>
-
-                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-                            <label> Proje Kategorisi</label>
-                            @Html.DropDownListFor(m => m.Category.CategoryId, (List<SelectListItem>)@ViewBag.Category, new { @class = "form-control" })
+                            @Html.HiddenFor(x => x.AboutID)
+                            <label for="exampleCategory">Başlık</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            <label for="exampleCategory"> Açıklama</label>
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
 
 
                             <label>Mevcut Görsel</label>
@@ -51,20 +49,9 @@
                                     </label>
                                 </div>
                             </div>
-                            <label for="exampleCategory">Yemek durum</label>
-
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="Aktif" name="IsActive" value="true" class="custom-control-input" @(Model.IsActive ? "checked" : "")>
-                                <label class="custom-control-label" for="Aktif">Aktif</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="Pasif" name="IsActive" value="false" class="custom-control-input" @(Model.IsActive ? "" : "checked")>
-                                <label class="custom-control-label" for="Pasif"> Pasif</label>
-                            </div>
-
 
                         </div>
-                        <button type="submit" class="btn btn-primary">Yemek Ekle</button>
+                        <button type="submit" class="btn btn-primary">Ekle</button>
                     </form>
                 </div>
             </div>
@@ -73,4 +60,3 @@
 </div>
 
 <script src="~/Templates/ruang-admin/js/demo/choosefileswritecript.js"></script>
-

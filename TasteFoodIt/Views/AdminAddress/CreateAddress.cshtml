@@ -1,8 +1,11 @@
-﻿@model TasteFoodIt.Entity.Category
+﻿@model TasteFoodIt.Entity.Address
 @{
-    ViewBag.Title = "CreateCategory";
+    ViewBag.Title = "CreateAddress";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
+
+
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -24,12 +27,14 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            <label for="exampleCategory">Kategori Adı</label>
-                            <input type="text" name="CategoryName" class="form-control" id="exampleCategory" aria-describedby="emailHelp"
-                                   placeholder="Kategori Giriniz">
-
+                            <label >Email</label>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                            <label >Telefon</label>
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })    
+                            <label >Açıklama</label>
+                           @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
                         </div>
-                        <button type="submit" class="btn btn-primary">Kategori Ekle</button>
+                        <button type="submit" class="btn btn-primary"> Ekle</button>
                     </form>
                 </div>
             </div>

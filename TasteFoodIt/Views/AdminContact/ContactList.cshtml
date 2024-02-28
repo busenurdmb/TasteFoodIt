@@ -1,8 +1,11 @@
-﻿@model List<TasteFoodIt.Entity.Category>
+﻿@model List<TasteFoodIt.Entity.Contact>
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "ContactList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
+
+
 
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -25,34 +28,44 @@
                         <thead class="thead-light">
                             <tr>
                                 <th>*</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategoriye Ait ürünler</th>
-                                <th>Sil</th>
+
+                                <th>Konu</th>
+                                <th>Email</th>
+                                <th>Mesaj</th>
+                                <th>Tarih</th>
                                 <th>Güncelle</th>
+                                <th>Sil</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                             <tr>
-                                <td><a href="#">@item.CategoryId</a></td>
-                                <td>@item.CategoryName</td>
-                                <td><span class="badge badge-primary">Kategoriye Ait Ürünler</span></td>
-                               
+                                <td><a href="#">@item.ContactId</a></td>
+
+                                <td>@item.Subject</td>
+                                <td>@item.Email</td>
+                                <td>@item.Message.Substring(0,25)....</td>
                                 <td>
-                                    <a href="/AdminCategory/DeleteCategory/@item.CategoryId" class="btn btn-danger btn-icon-split">
+                                    <span class="badge badge-primary">@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</span>
+
+                                </td>
+
+                                <td>
+                                    <a href="/AdminContact/UpdateContact/@item.ContactId" class="btn btn-warning btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-info-circle"></i>
+                                        </span>
+                                        <span class="text">Detaylar</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/AdminContact/DeleteContact/@item.ContactId" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
                                         <span class="text">Sil</span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/AdminCategory/UpdateCategory/@item.CategoryId" class="btn btn-warning btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-info-circle"></i>
-                                        </span>
-                                        <span class="text">Güncelle</span>
                                     </a>
                                 </td>
                             </tr>
@@ -61,8 +74,9 @@
 
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    
                 </div>
+
                 <div class="card-footer"></div>
             </div>
         </div>
@@ -72,3 +86,4 @@
 
 
 </div>
+

@@ -15,12 +15,16 @@ namespace TasteFoodIt.Controllers
       
         public ActionResult AboutList()
         {
+            ViewBag.name = "Hakkımda";
+            //string PageName = "Chef";
+            //TempData["Page"] = PageName;
             var values = context.Abouts.ToList();
             return View(values);
         }
         [HttpGet]
         public ActionResult CreateAbout()
         {
+            ViewBag.name = "Hakkımda";
             return View();
         }
         [HttpPost]
@@ -41,16 +45,22 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult UpdateAbout(int id)
         {
+            ViewBag.name = "Hakkımda";
             var value = context.Abouts.Find(id);
             return View(value);
         }
         [HttpPost]
         public ActionResult UpdateAbout(About About)
         {
+          
             var value = context.Abouts.Find(About.AboutID);
             value.Title = About.Title;
             value.Description = About.Description;
-            value.ImageUrl = About.ImageUrl;
+            if (About.ImageUrl != null)
+            {
+                value.ImageUrl = "/Templates/tasteit-master/images/" + About.ImageUrl;
+            }
+           
             context.SaveChanges();
             return RedirectToAction("AboutList");
 

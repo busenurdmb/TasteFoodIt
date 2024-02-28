@@ -4822,6 +4822,16 @@
     <Content Include="Views\AdminProduct\ProductList.cshtml" />
     <Content Include="Views\AdminProduct\CreateProduct.cshtml" />
     <Content Include="Views\AdminProduct\UpdateProduct.cshtml" />
+    <Content Include="Views\AdminAbout\AboutList.cshtml" />
+    <Content Include="Views\AdminAbout\CreateAbout.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminAddress\AddressList.cshtml" />
+    <Content Include="Views\AdminAddress\CreateAddress.cshtml" />
+    <Content Include="Views\AdminAddress\UpdateAddress.cshtml" />
+    <Content Include="Views\AdminChef\ChefList.cshtml" />
+    <Content Include="Views\AdminChef\CreateChef.cshtml" />
+    <Content Include="Views\AdminChef\UpdateChef.cshtml" />
+    <Content Include="Views\AdminContact\ContactList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4829,10 +4839,6 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
-    <Folder Include="Views\AdminAbout\" />
-    <Folder Include="Views\AdminAddress\" />
-    <Folder Include="Views\AdminChef\" />
-    <Folder Include="Views\AdminContact\" />
     <Folder Include="Views\AdminReservation\" />
     <Folder Include="Views\AdminTestimonial\" />
     <Folder Include="Views\OpenDayHour\" />

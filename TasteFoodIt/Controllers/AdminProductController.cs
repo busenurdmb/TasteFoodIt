@@ -15,7 +15,7 @@ namespace TasteFoodIt.Controllers
         // GET: AdminProduct
         public ActionResult ProductList()
         {
-          
+            ViewBag.name = "Ürün";
             var categories = (from x in context.Categories
                               select new
                               {
@@ -30,6 +30,7 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult CreateProduct()
         {
+            ViewBag.name = "Ürün";
             List<SelectListItem> category = (from x in context.Categories.ToList()
                                              select new
                                              SelectListItem

@@ -15,17 +15,20 @@ namespace TasteFoodIt.Controllers
       
         public ActionResult AddressList()
         {
+            ViewBag.name = "Adress";
             var values = context.Addresses.ToList();
             return View(values);
         }
         [HttpGet]
         public ActionResult CreateAddress()
         {
+            ViewBag.name = "Adress";
             return View();
         }
         [HttpPost]
         public ActionResult CreateAddress(Address Address)
         {
+            
             context.Addresses.Add(Address);
             context.SaveChanges();
             return RedirectToAction("AddressList");
@@ -33,6 +36,7 @@ namespace TasteFoodIt.Controllers
         }
         public ActionResult DeleteAddress(int id)
         {
+            
             var values = context.Addresses.Find(id);
             context.Addresses.Remove(values);
             context.SaveChanges();
@@ -41,6 +45,7 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult UpdateAddress(int id)
         {
+            ViewBag.name = "Adress";
             var value = context.Addresses.Find(id);
             return View(value);
         }

@@ -14,12 +14,14 @@ namespace TasteFoodIt.Controllers
         // GET: Category
         public ActionResult CategoryList()
         {
+            ViewBag.name = "Kategori";
             var values = context.Categories.ToList();
             return View(values);
         }
         [HttpGet]
         public ActionResult CreateCategory()
         {
+            ViewBag.name = "Kategori";
             return View();
         }
         [HttpPost]
@@ -32,6 +34,7 @@ namespace TasteFoodIt.Controllers
         }
         public ActionResult DeleteCategory(int id)
         {
+            ViewBag.name = "Kategori";
             var values = context.Categories.Find(id);
             context.Categories.Remove(values);
             context.SaveChanges();
