@@ -8,7 +8,7 @@ using TasteFoodIt.Entity;
 
 namespace TasteFoodIt.Controllers
 {
-    public class CategoryController : Controller
+    public class AdminCategoryController : Controller
     {
         TasteContext context = new TasteContext();
         // GET: Category

@@ -129,8 +129,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\TasteContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAddressController.cs" />
+    <Compile Include="Controllers\AdminChefController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminReservationController.cs" />
+    <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -138,6 +145,7 @@
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\OpenDayHourController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Entity\About.cs" />
     <Compile Include="Entity\Address.cs" />
@@ -225,6 +233,7 @@
     <Content Include="Templates\ruang-admin\img\think.svg" />
     <Content Include="Templates\ruang-admin\img\undraw_posting_photo.svg" />
     <Content Include="Templates\ruang-admin\index.html" />
+    <Content Include="Templates\ruang-admin\js\demo\choosefileswritecript.js" />
     <Content Include="Templates\ruang-admin\js\demo\chart-area-demo.js" />
     <Content Include="Templates\ruang-admin\js\demo\chart-bar-demo.js" />
     <Content Include="Templates\ruang-admin\js\demo\chart-pie-demo.js" />
@@ -2396,7 +2405,7 @@
     <Content Include="Views\Contact\PartialContactİnformation.cshtml" />
     <Content Include="Views\Contact\PartialContactUs.cshtml" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
-    <Content Include="Views\Category\CategoryList.cshtml" />
+    <Content Include="Views\AdminCategory\CategoryList.cshtml" />
     <Content Include="Templates\ruang-admin\.git\COMMIT_EDITMSG" />
     <Content Include="Templates\ruang-admin\.git\config" />
     <Content Include="Templates\ruang-admin\.git\description" />
@@ -4807,9 +4816,12 @@
     <Content Include="Views\AdminLayout\PartialNavbar.cshtml" />
     <Content Include="Views\AdminLayout\PartialFooter.cshtml" />
     <Content Include="Views\AdminLayout\PartialScript.cshtml" />
-    <Content Include="Views\Category\CreateCategory.cshtml" />
-    <Content Include="Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Views\AdminCategory\CreateCategory.cshtml" />
+    <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\AdminProduct\ProductList.cshtml" />
+    <Content Include="Views\AdminProduct\CreateProduct.cshtml" />
+    <Content Include="Views\AdminProduct\UpdateProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4817,6 +4829,13 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
+    <Folder Include="Views\AdminAbout\" />
+    <Folder Include="Views\AdminAddress\" />
+    <Folder Include="Views\AdminChef\" />
+    <Folder Include="Views\AdminContact\" />
+    <Folder Include="Views\AdminReservation\" />
+    <Folder Include="Views\AdminTestimonial\" />
+    <Folder Include="Views\OpenDayHour\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

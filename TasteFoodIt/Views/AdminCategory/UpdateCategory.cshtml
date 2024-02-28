@@ -24,11 +24,12 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            
-                            @Html.HiddenFor(x=>x.CategoryId)
+                            <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+                            @*@Html.HiddenFor(x=>x.CategoryId)*@
 
                             <label for="exampleCategory">Kategori Adı</label>
-                            @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                            <input type="text" name="CategoryName" value="@Model.CategoryName" />
+                            @*@Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })*@
 
                         </div>
                         <button type="submit" class="btn btn-primary">Kategori Güncelle</button>

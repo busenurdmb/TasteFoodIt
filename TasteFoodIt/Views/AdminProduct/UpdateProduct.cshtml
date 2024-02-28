@@ -1,0 +1,91 @@
+﻿@model TasteFoodIt.Entity.Product
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Yemek Ekleme Sayfası</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Anasayfa</a></li>
+            <li class="breadcrumb-item">Yemekler</li>
+            <li class="breadcrumb-item active" aria-current="page">Yemek İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Form Basic -->
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Form Basic</h6>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            @Html.HiddenFor(x => x.ProductId)
+                            <label for="exampleCategory">Yemek Adı</label>
+                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+                            <label for="exampleCategory">Yemek Açıklama</label>
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })    <label for="exampleCategory">Yemek Adı</label>
+                            <label for="exampleCategory">Yemek fiyat</label>
+
+                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                            <label> Proje Kategorisi</label>
+                            @Html.DropDownListFor(m => m.Category.CategoryId, (List<SelectListItem>)@ViewBag.Category, new { @class = "form-control" })
+
+
+                            <label>Mevcut Görsel</label>
+                            <label >
+                                <span>@Model.ImageUrl</span>
+                            </label>
+                            <br />
+                            <img style="width: 20%; height: 20%;" src="@Model.ImageUrl" alt="@Model.ImageUrl" class="img-thumbnail">
+                            <br />
+
+
+
+
+                            <div class="form-group col-lg-12">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="ImageUrl" value="@Model.ImageUrl" onchange="updateFileName(this)">
+                                    <label class="custom-file-label" for="customFile">
+                                        <span>@Model.ImageUrl</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                          
+                            
+
+
+
+
+                           
+
+
+
+                            <label for="exampleCategory">Yemek durum</label>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="Aktif" name="IsActive" value="true" class="custom-control-input" @(Model.IsActive ? "checked" : "")>
+                                <label class="custom-control-label" for="Aktif">Aktif</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="Pasif" name="IsActive" value="false" class="custom-control-input" @(Model.IsActive ? "" : "checked")>
+                                <label class="custom-control-label" for="Pasif"> Pasif</label>
+                            </div>
+
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Yemek Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Templates/ruang-admin/js/demo/choosefileswritecript.js"></script>
+
