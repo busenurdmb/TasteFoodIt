@@ -3,13 +3,6 @@
     ViewBag.Title = "UpdateChef";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
-
-
-
-
-
-
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">@ViewBag.name Güncelleme Sayfası</h1>
@@ -30,7 +23,7 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            @Html.HiddenFor(x=>x.ChefId)
+                            @Html.HiddenFor(x => x.ChefId)
                             <label> Adı</label>
                             @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
                             <label>Ünvan</label>
@@ -40,24 +33,19 @@
 
                             @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
 
-                            <label for="exampleCategory">Şef Resmi fotoğraf</label>
-
-
-
+                            <label>Mevcut Görsel</label>
+                            <label>
+                                <span>@Model.ImageUrl</span>
+                            </label>
+                            <br />
+                            <img style="width: 20%; height: 20%;" src="@Model.ImageUrl" alt="@Model.ImageUrl" class="img-thumbnail">
+                            <br />
                             <div class="form-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" name="ImageUrl" value="@Model.ImageUrl" onchange="updateFileName(this)">
+                                    <input type="file" class="custom-file-input" id="customFile" name="ImageUrl"  onchange="updateFileName(this)">
                                     <label class="custom-file-label" for="customFile">@Model.ImageUrl</label>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
                         </div>
                         <button type="submit" class="btn btn-primary">Yemek Ekle</button>
                     </form>

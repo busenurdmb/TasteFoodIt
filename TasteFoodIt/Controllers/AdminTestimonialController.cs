@@ -15,6 +15,7 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult TestimonialList()
         {
+            ViewBag.name = "Referanslar";
             var values = context.Testimonials.ToList();
             return View(values);
         }
@@ -26,6 +27,7 @@ namespace TasteFoodIt.Controllers
         [HttpPost]
         public ActionResult CreateTestimonial(Testimonial Testimonial)
         {
+            Testimonial.ImageUrl = "/Templates/tasteit-master/images/" + Testimonial.ImageUrl;
             context.Testimonials.Add(Testimonial);
             context.SaveChanges();
             return RedirectToAction("TestimonialList");
@@ -50,7 +52,10 @@ namespace TasteFoodIt.Controllers
             var value = context.Testimonials.Find(Testimonial.TestimonialId);
             value.NameSurname= Testimonial.NameSurname;
             value.Title = Testimonial.Title;
-            value.ImageUrl = Testimonial.ImageUrl;
+            if (Testimonial.ImageUrl != null)
+            {
+                value.ImageUrl = "/Templates/tasteit-master/images/" + Testimonial.ImageUrl;
+            }
             context.SaveChanges();
             return RedirectToAction("TestimonialList");
 

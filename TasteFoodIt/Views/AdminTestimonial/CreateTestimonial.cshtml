@@ -1,9 +1,8 @@
-﻿@model TasteFoodIt.Entity.Product
+﻿@model TasteFoodIt.Entity.Testimonial
 @{
-    ViewBag.Title = "CreateProduct";
+    ViewBag.Title = "CreateTestimonial";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">@ViewBag.name Ekleme Sayfası</h1>
@@ -24,16 +23,17 @@
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            <label >Yemek Adı</label>
-                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
-                            <label >Yemek Açıklama</label>
-                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
-                            <label >Yemek fiyat</label>
 
-                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
-                            <label> Proje Kategorisi</label>
-                            @Html.DropDownListFor(m => m.Category.CategoryId, (List<SelectListItem>)@ViewBag.Category, new { @class = "form-control" })
-                            <label for="exampleCategory">Ürün Resmi</label>
+                            <label> İsmi</label>
+                            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+
+                            <label>Ünvan</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+                            <label>Açıklama</label>
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+
+                            <label for="exampleCategory"> Fotoğraf</label>
                             <div class="form-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile" name="ImageUrl" onchange="updateFileName(this)">
@@ -41,25 +41,21 @@
                                 </div>
                             </div>
 
-                            <label for="exampleCategory">Yemek durum</label>
 
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="Aktif" name="IsActive" value="true" class="custom-control-input">
-                                <label class="custom-control-label" for="Aktif">Aktif</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="Pasif" name="IsActive" value="false" class="custom-control-input">
-                                <label class="custom-control-label" for="Pasif"> Pasif</label>
-                            </div>
+
+
+
+
 
 
                         </div>
-                        <button type="submit" class="btn btn-primary">Ekle</button>
+                        <button type="submit" class="btn btn-primary"> Ekle</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script src="~/Templates/ruang-admin/js/demo/choosefileswritecript.js"></script>
+
+

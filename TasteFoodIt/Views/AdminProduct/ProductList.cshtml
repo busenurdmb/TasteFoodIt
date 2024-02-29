@@ -20,6 +20,7 @@
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">@ViewBag.name Tablosu</h6>
+                    <a href="/AdminProduct/CreateProduct" class="btn btn-primary">Yeni Ürün Girişi</a>
                 </div>
 
                 <div class="table-responsive">
@@ -30,9 +31,9 @@
                                 <th>Yemek Adı</th>
                                 <th>Açıklama</th>
                                 <th>Fiyat</th>
+                                <th>Kategori</th>
                                 <th>Resim</th>
                                 <th>Durum</th>
-
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -40,62 +41,63 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td><a href="#">@item.ProductId</a></td>
-                                    <td>@item.ProductName</td>
-                                    <td>@item.Description</td>
-                                    <td>@item.Price</td>
+                            <tr>
+                                <td><a href="#">@item.ProductId</a></td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Description</td>
+                                <td>@item.Price</td>
+                                <td>@item.Category.CategoryName</td>
+                                <td>
+                                    <img @*style="width: 50%; height: 50%;"*@ src="@item.ImageUrl" alt="@item.ImageUrl" class="img-thumbnail">
+                                </td>
+                                @if (item.IsActive == bool.Parse("true"))
+                                {
                                     <td>
-                                        <img style="width: 50%; height: 50%;" src="@item.ImageUrl" alt="@item.ImageUrl" class="img-thumbnail">
-                                    </td>
-                                    @if (item.IsActive == bool.Parse("true"))
-                                    {
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-check"></i>
-                                                </span>
-                                                <span class="text">@item.IsActive</span>
-                                            </a>
-
-
-                                        </td>
-                                    }
-                                    @if (item.IsActive == bool.Parse("false"))
-                                    {
-                                        <td>
-                                            <a href="#" class="btn btn-dark btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-exclamation-circle"></i>
-                                                </span>
-                                                <span class="text">@item.IsActive</span>
-                                            </a>
-                                        </td>
-                                    }
-                                      <td>
-                                        <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger btn-icon-split">
+                                        <a href="#" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
-                                                <i class="fas fa-trash"></i>
+                                                <i class="fas fa-check"></i>
                                             </span>
-                                            <span class="text">Sil</span>
+                                            <span class="text">@item.IsActive</span>
+                                        </a>
+
+
+                                    </td>
+                                }
+                                @if (item.IsActive == bool.Parse("false"))
+                                {
+                                    <td>
+                                        <a href="#" class="btn btn-dark btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                            </span>
+                                            <span class="text">@item.IsActive</span>
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning btn-icon-split">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <span class="text">Güncelle</span>
-                                        </a>
-                                    </td>
+                                }
+                                <td>
+                                    <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span class="text">Sil</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-info-circle"></i>
+                                        </span>
+                                        <span class="text">Güncelle</span>
+                                    </a>
+                                </td>
 
-                                </tr>
+                            </tr>
                             }
 
 
                         </tbody>
                     </table>
-                    <a href="/AdminProduct/CreateProduct" class="btn btn-primary">Yeni Ürün Girişi</a>
+                    
                 </div>
 
 

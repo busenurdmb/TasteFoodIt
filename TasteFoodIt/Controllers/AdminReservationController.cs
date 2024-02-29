@@ -15,22 +15,23 @@ namespace TasteFoodIt.Controllers
 
         public ActionResult ReservationList()
         {
+            ViewBag.name = "Rezervasyon";
             var values = context.Reservations.ToList();
             return View(values);
         }
-        [HttpGet]
-        public ActionResult CreateReservation()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult CreateReservation(Reservation Reservation)
-        {
-            context.Reservations.Add(Reservation);
-            context.SaveChanges();
-            return RedirectToAction("ReservationList");
+        //[HttpGet]
+        //public ActionResult CreateReservation()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult CreateReservation(Reservation Reservation)
+        //{
+        //    context.Reservations.Add(Reservation);
+        //    context.SaveChanges();
+        //    return RedirectToAction("ReservationList");
 
-        }
+        //}
         public ActionResult DeleteReservation(int id)
         {
             var values = context.Reservations.Find(id);

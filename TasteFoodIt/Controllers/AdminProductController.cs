@@ -16,15 +16,17 @@ namespace TasteFoodIt.Controllers
         public ActionResult ProductList()
         {
             ViewBag.name = "Ürün";
-            var categories = (from x in context.Categories
-                              select new
-                              {
-                                  CategoryName = x.CategoryName,
-                                  CategoryId = x.CategoryId
-                              }).ToList();
+            //var categories = (from x in context.Categories
+            //                  select new
+            //                  {
+            //                      CategoryName = x.CategoryName,
+            //                      CategoryId = x.CategoryId
+            //                  }).ToList();
 
-            ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+            //ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+            
             var values = context.Products.ToList();
+            
             return View(values);
         }
         [HttpGet]

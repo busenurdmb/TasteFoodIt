@@ -51,7 +51,7 @@ namespace TasteFoodIt.Controllers
         public PartialViewResult PartialMenu()
         {
             
-            var value = context.Products.ToList();
+          var value = context.Products.ToList();
           return PartialView(value);
         }
         public PartialViewResult PartialMenufirstrow()

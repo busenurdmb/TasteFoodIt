@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TasteFoodIt.Context;
+using TasteFoodIt.Entity;
 
 namespace TasteFoodIt.Controllers
 {
     public class ReservationController : Controller
     {
+        TasteContext context = new TasteContext();
         // GET: Reservation
         public ActionResult Index()
         {
@@ -19,5 +22,17 @@ namespace TasteFoodIt.Controllers
         {
             return PartialView();
         }
+        [HttpPost]
+        public PartialViewResult PartialReservationBookYourTable(Reservation reservation)
+        {
+            reservation.ReservationStatus = "Rezervasyon Alındı";
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
+            ViewBag.v = "true";
+            return PartialView();
+        }
+     
+
+
     }
 }

@@ -140,6 +140,7 @@
     <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DetailLayoutController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
@@ -179,6 +180,14 @@
     <Compile Include="Migrations\202402271901432__createadmin.cs" />
     <Compile Include="Migrations\202402271901432__createadmin.designer.cs">
       <DependentUpon>202402271901432__createadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402291727432__productaddvirtual.cs" />
+    <Compile Include="Migrations\202402291727432__productaddvirtual.designer.cs">
+      <DependentUpon>202402291727432__productaddvirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402291830106__addreservationcolumn.cs" />
+    <Compile Include="Migrations\202402291830106__addreservationcolumn.designer.cs">
+      <DependentUpon>202402291830106__addreservationcolumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4832,6 +4841,11 @@
     <Content Include="Views\AdminChef\CreateChef.cshtml" />
     <Content Include="Views\AdminChef\UpdateChef.cshtml" />
     <Content Include="Views\AdminContact\ContactList.cshtml" />
+    <Content Include="Views\AdminTestimonial\TestimonialList.cshtml" />
+    <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\AdminReservation\ReservationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4839,8 +4853,6 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
-    <Folder Include="Views\AdminReservation\" />
-    <Folder Include="Views\AdminTestimonial\" />
     <Folder Include="Views\OpenDayHour\" />
   </ItemGroup>
   <ItemGroup>
@@ -4871,6 +4883,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402271901432__createadmin.resx">
       <DependentUpon>202402271901432__createadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402291727432__productaddvirtual.resx">
+      <DependentUpon>202402291727432__productaddvirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402291830106__addreservationcolumn.resx">
+      <DependentUpon>202402291830106__addreservationcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
