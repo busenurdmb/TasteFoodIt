@@ -22,16 +22,26 @@ namespace TasteFoodIt.Controllers
         {
             return PartialView();
         }
+        //[HttpPost]
+        //public PartialViewResult PartialReservationBookYourTable(Reservation reservation)
+        //{
+        //    reservation.ReservationStatus = "Rezervasyon Alındı";
+        //    context.Reservations.Add(reservation);
+        //    context.SaveChanges();
+        //    ViewBag.v = "true";
+        //    return PartialView();
+        //}
         [HttpPost]
-        public PartialViewResult PartialReservationBookYourTable(Reservation reservation)
+        public JsonResult CreateReservation(Reservation reservation)
         {
             reservation.ReservationStatus = "Rezervasyon Alındı";
+            //reservation.ReservationDate
             context.Reservations.Add(reservation);
             context.SaveChanges();
             ViewBag.v = "true";
-            return PartialView();
+            return Json(reservation, JsonRequestBehavior.AllowGet);
         }
-     
+
 
 
     }

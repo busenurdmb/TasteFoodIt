@@ -136,8 +136,10 @@
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminNotificationController.cs" />
+    <Compile Include="Controllers\AdminOpenDayHourController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="Controllers\AdminReservationController.cs" />
+    <Compile Include="Controllers\AdminSocialMediaController.cs" />
     <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -155,10 +157,12 @@
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Chef.cs" />
     <Compile Include="Entity\Contact.cs" />
+    <Compile Include="Entity\Mail.cs" />
     <Compile Include="Entity\Notification.cs" />
     <Compile Include="Entity\OpenDayHour.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\Reservation.cs" />
+    <Compile Include="Entity\SocialMedia.cs" />
     <Compile Include="Entity\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +206,10 @@
     <Compile Include="Migrations\202403051815365_aa.cs" />
     <Compile Include="Migrations\202403051815365_aa.designer.cs">
       <DependentUpon>202403051815365_aa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403072222180_newtablesocial_mail.cs" />
+    <Compile Include="Migrations\202403072222180_newtablesocial_mail.designer.cs">
+      <DependentUpon>202403072222180_newtablesocial_mail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4870,6 +4878,8 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
+    <Folder Include="Views\AdminOpenDayHour\" />
+    <Folder Include="Views\AdminSocialMedia\" />
     <Folder Include="Views\OpenDayHour\" />
   </ItemGroup>
   <ItemGroup>
@@ -4915,6 +4925,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403051815365_aa.resx">
       <DependentUpon>202403051815365_aa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403072222180_newtablesocial_mail.resx">
+      <DependentUpon>202403072222180_newtablesocial_mail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
