@@ -19,23 +19,18 @@ namespace TasteFoodIt.Controllers
             var values = context.Reservations.ToList();
             return View(values);
         }
-        //[HttpGet]
-        //public ActionResult CreateReservation()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult CreateReservation(Reservation Reservation)
-        //{
-        //    context.Reservations.Add(Reservation);
-        //    context.SaveChanges();
-        //    return RedirectToAction("ReservationList");
-
-        //}
+    
         public ActionResult DeleteReservation(int id)
         {
             var values = context.Reservations.Find(id);
-            context.Reservations.Remove(values);
+            values.ReservationStatus = "İptal Edildi";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
+        public ActionResult OnaylandıReservation(int id)
+        {
+            var values = context.Reservations.Find(id);
+            values.ReservationStatus = "Onaylandı";
             context.SaveChanges();
             return RedirectToAction("ReservationList");
         }
@@ -49,10 +44,7 @@ namespace TasteFoodIt.Controllers
         public ActionResult UpdateReservation(Reservation Reservation)
         {
             var value = context.Reservations.Find(Reservation.ReservationId);
-            value.Name = Reservation.Name;
-            value.Email = Reservation.Email;
             value.ReservationStatus = Reservation.ReservationStatus;
-            value.Time = Reservation.Time;
             context.SaveChanges();
             return RedirectToAction("ReservationList");
 

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TasteFoodIt.Context;
 
 namespace TasteFoodIt.Controllers
 {
     public class AdminLayoutController : Controller
     {
+        TasteContext tasteContext = new TasteContext();
         // GET: AdminLayout
         public ActionResult Index()
         {
@@ -23,8 +25,11 @@ namespace TasteFoodIt.Controllers
         }
         public PartialViewResult PartialNavbar()
         {
-            return PartialView();
+            ViewBag.notificationIsreadByFalseCount= tasteContext.Notifications.Where(x=>x.IsRead=="false").Count();
+           var value= tasteContext.Notifications.Where(x=>x.IsRead== "false").ToList();
+            return PartialView(value);
         }
+       
         public PartialViewResult PartialFooter()
         {
             return PartialView();
@@ -33,5 +38,12 @@ namespace TasteFoodIt.Controllers
         {
             return PartialView();
         }
+        public ActionResult NotificationStatusChangeToTrue(int id)
+        {
+            var values = tasteContext.Notifications.Find(id);
+            values.IsRead ="true";
+            tasteContext.SaveChanges();
+            return RedirectToAction("ProductList", "AdminProduct");
+;        }
     }
 }

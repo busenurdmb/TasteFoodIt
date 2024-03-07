@@ -24,6 +24,6 @@ namespace TasteFoodIt.Controllers
             
             return PartialView();
         }
-       
+    
     }
 }

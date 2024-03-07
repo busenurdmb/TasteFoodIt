@@ -34,6 +34,7 @@
                                 <th>durum</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
+                                <th>Güncelle</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,19 +45,44 @@
                                 <td>@item.Name</td>
                                 <td>@item.Phone</td>
                                 <td>@item.Email</td>
-                                <td>@item.ReservationStatus</td>
-                                
+                                @if (item.ReservationStatus == "Onaylandı")
+                                {
+                                    <td>
+                                        <span class="badge badge-success">@item.ReservationStatus</span>
+                                    </td>
+                                }
+                                @if (item.ReservationStatus == "Rezervasyon Alındı")
+                                {
+                                    <td>
+                                        <span class="badge badge-primary">@item.ReservationStatus</span>
+                                    </td>
+                                }
+                                @if (item.ReservationStatus == "İptal Edildi")
+                                {
+                                    <td>
+                                        <span class="badge badge-danger">@item.ReservationStatus</span>
+                                    </td>
+                                }
 
                                 <td>
-                                    <a href="/AdminCategory/DeleteReservation/@item.ReservationId" class="btn btn-danger btn-icon-split">
+                                    <a href="/AdminReservation/DeleteReservation/@item.ReservationId" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                        <span class="text">İptal et</span>
+                                        <span class="text">İptal </span>
+                                    </a>
+
+                                </td>
+                                <td>
+                                    <a href="/AdminReservation/OnaylandıReservation/@item.ReservationId" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Onayla</span>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/AdminCategory/UpdateCategor/@item.ReservationId" class="btn btn-warning btn-icon-split">
+                                    <a href="/AdminReservation/UpdateReservation/@item.ReservationId" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
@@ -69,7 +95,7 @@
 
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-primary">Yeni Kategori Girişi</a>
+                   
                 </div>
                 <div class="card-footer"></div>
             </div>

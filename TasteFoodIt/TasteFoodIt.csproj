@@ -135,12 +135,13 @@
     <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminNotificationController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="Controllers\AdminReservationController.cs" />
     <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DetailLayoutController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Chef.cs" />
     <Compile Include="Entity\Contact.cs" />
+    <Compile Include="Entity\Notification.cs" />
     <Compile Include="Entity\OpenDayHour.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\Reservation.cs" />
@@ -189,10 +191,23 @@
     <Compile Include="Migrations\202402291830106__addreservationcolumn.designer.cs">
       <DependentUpon>202402291830106__addreservationcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403051712357_createnotification.cs" />
+    <Compile Include="Migrations\202403051712357_createnotification.designer.cs">
+      <DependentUpon>202403051712357_createnotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403051740400_newnotificationcolums.cs" />
+    <Compile Include="Migrations\202403051740400_newnotificationcolums.designer.cs">
+      <DependentUpon>202403051740400_newnotificationcolums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403051815365_aa.cs" />
+    <Compile Include="Migrations\202403051815365_aa.designer.cs">
+      <DependentUpon>202403051815365_aa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bilgi\TextFile1.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -4844,8 +4859,10 @@
     <Content Include="Views\AdminTestimonial\TestimonialList.cshtml" />
     <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
     <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\AdminDashboard\Index.cshtml" />
     <Content Include="Views\AdminReservation\ReservationList.cshtml" />
+    <Content Include="Views\AdminReservation\UpdateReservation.cshtml" />
+    <Content Include="Views\AdminNotification\NotificationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4889,6 +4906,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402291830106__addreservationcolumn.resx">
       <DependentUpon>202402291830106__addreservationcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403051712357_createnotification.resx">
+      <DependentUpon>202403051712357_createnotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403051740400_newnotificationcolums.resx">
+      <DependentUpon>202403051740400_newnotificationcolums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403051815365_aa.resx">
+      <DependentUpon>202403051815365_aa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

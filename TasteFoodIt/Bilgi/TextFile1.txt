@@ -1,0 +1,85 @@
+﻿ilişkili tablolar?
+  public class Product
+    {
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public string ImageUrl { get; set; }
+        public bool IsActive { get; set; }
+        public int CategoryId { get; set; }
+        public  Category Category { get; set; }
+    }
+    item.category.categoryname diyicem gelicek
+    bunu bu formatta kullanabilmem için
+    mvc .net framworkde var codefirstte yok kelime virtual 
+Virtual Ne İşe YARAR?
+public virtual Category Category { get; set; }
+code firstte şu işe yarıyor
+-> public  Category Category { get; set; } bu property veri tabanına yansıtmayacak overlide edicem aslında benim istediğim formatta bunu ezip kullnaıyor olucam.
+kullandığım zamanda böyle bir sütünü veri tabanı içerisne dağıl etmiyecek ve benim category sınıf üzerinden birleştirme yapmammı sağlıcak.
+LazyLoading Eager Loading 
+
+Lazy Loading (Tembel Yükleme) Örneği:
+
+
+public class SchoolContext : DbContext
+{
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Course> Courses { get; set; }
+    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies();
+    }
+}
+
+using (var context = new SchoolContext())
+{
+    var student = context.Students.First();
+    // Students koleksiyonuna erişildiğinde, veritabanından sorgu yapılır ve öğrencinin kursları yüklenir
+    var courses = student.Courses.ToList();
+}
+Yukarıdaki örnekte, UseLazyLoadingProxies metodu ile Lazy Loading (Tembel Yükleme) etkinleştirilmiştir. İlişkili verilere erişildiğinde, gereken sorgu otomatik olarak gerçekleştirilir ve veriler yüklenir.
+
+
+Entity Framework Code First yaklaşımında "virtual" anahtar kelimesi genellikle ilişkili verilerin tembel yükleme (lazy loading) işlevselliğini etkinleştirmek için kullanılır.
+
+İlişkili verilerin tembel yükleme özelliği, ilişkili nesnelerin yalnızca ihtiyaç duyulduğunda yüklenmesini sağlar. Bu, performansı artırır çünkü uygulama sadece gerçekten gerekli olduğunda ilişkili verileri yükler. Bu özellik, ilişkili verileri ayrı bir sorgu yapmadan ana sorgu ile birlikte yüklemek için kullanışlıdır.
+
+"virtual" anahtar kelimesini kullanarak, Entity Framework ilişkili verilerin tembel yükleme özelliğini etkinleştirebilir.
+
+Eager Load Örneği:
+using (var context = new SchoolContext())
+{
+    // Students ve Courses tablolarını birlikte sorgula ve ilişkili tüm kursları yükle
+    var studentsWithCourses = context.Students.Include(s => s.Courses).ToList();
+}
+Yukarıdaki örnekte, Include metodu kullanılarak, öğrencilerin kursları ile birlikte yüklenmesi sağlanır. Bu, Eager Load (Çabuk Yükleme) olarak adlandırılır çünkü ilişkili veriler önceden yüklenir ve tek bir sorguda alınır. Bu, performansı artırabilir, ancak tüm verilerin alınması gerektiği durumlarda tercih edilir.
+
+Explicit Loading (Açık Yükleme) Örneği:
+
+
+using (var context = new SchoolContext())
+{
+    var student = context.Students.First();
+    // Öğrencinin kursları açıkça yüklenir
+    context.Entry(student).Collection(s => s.Courses).Load();
+}
+Yukarıdaki örnekte, Load metodu kullanılarak Explicit Loading (Açık Yükleme) gerçekleştirilir. İlişkili veriler belirli bir zamanda açıkça yüklenir, böylece kontrol sağlanır ve gerektiğinde yükleme işlemi gerçekleştirilir.
+Explicit Loading ve Eager Loading, ilişkili verilerin yüklenme sürecindeki farklı yaklaşımları temsil eder.
+
+Eager Loading (Çabuk Yükleme):
+Eager loading, bir nesne ve ilişkili tüm verileri, ana sorgu ile birlikte yükler. Yani, bir nesneye erişildiğinde ilişkili veriler hemen yüklenir. Bu, genellikle ilişkili verilerin genellikle ihtiyaç duyulan birleştirme operasyonunda tek bir sorguyla getirilmesini sağlar. Bu, performansı artırabilir ancak gereksiz veri alımına neden olabilir.
+
+Explicit Loading (Açık Yükleme):
+Explicit loading, ilişkili verileri yüklemek için açıkça bir yükleme işlemi gerçekleştirmeyi sağlar. Yani, ilişkili veriler, ana sorguyla birlikte değil, belirli bir zamanda veya gerektiğinde yüklenir. Bu, ilişkili verilerin yalnızca gerektiğinde yüklenmesini sağlar, bu da performansı artırır ve gereksiz veri alımını önler.
+
+İkisi arasındaki temel fark, ilişkili verilerin ne zaman yükleneceğidir. Eager loading, nesneye erişildiğinde ilişkili verilerin hemen yüklenmesini sağlarken, explicit loading'de ilişkili veriler belirli bir zamanda veya açıkça yükleme işlemi çağrıldığında yüklenir.
+
+Bu farklı yaklaşımlar, uygulamanın gereksinimlerine ve performans hedeflerine bağlı olarak seçilir. Eager loading genellikle birleştirme operasyonlarında performansı artırırken, explicit loading daha fazla kontrol ve esneklik sağlar.
+
+
+
+
+

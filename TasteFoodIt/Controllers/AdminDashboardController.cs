@@ -7,7 +7,7 @@ using TasteFoodIt.Context;
 
 namespace TasteFoodIt.Controllers
 {
-    public class DashboardController : Controller
+    public class AdminDashboardController : Controller
     {
         TasteContext context = new TasteContext();
         // GET: Dashboard

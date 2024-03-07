@@ -1,8 +1,7 @@
-﻿@model List<TasteFoodIt.Entity.Product>
+﻿@model List<TasteFoodIt.Entity.Notification>
 @{
-    ViewBag.Title = "ProductList";
+    ViewBag.Title = "NotificationList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
-    
 }
 
 
@@ -19,25 +18,18 @@
     </div>
     <div class="row">
         <div class="col-lg-12 mb-4">
-
             <!-- Simple Tables -->
             <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">@ViewBag.name Tablosu</h6>
-                    <a href="/AdminProduct/CreateProduct" class="btn btn-primary">Yeni Ürün Girişi</a>
                 </div>
-
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush table-hover" id="tbl1">
+                    <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
                                 <th>*</th>
-                                <th>Yemek Adı</th>
-                                <th>Açıklama</th>
-                                <th>Fiyat</th>
-                                <th>Kategori</th>
-                                <th>Resim</th>
-                                <th>Durum</th>
+                                <th>Kategori Adı</th>
+                                <th>Kategoriye Ait ürünler</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -46,67 +38,58 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td><a href="#">@item.ProductId</a></td>
-                                    <td>@item.ProductName</td>
+                                    <td><a href="#">@item.NotificationId</a></td>
                                     <td>@item.Description</td>
-                                    <td>@item.Price</td>
-                                    <td>@item.Category.CategoryName</td>
-                                    <td>
-                                        <img @*style="width: 50%; height: 50%;"*@ src="@item.ImageUrl" alt="@item.ImageUrl" class="img-thumbnail">
-                                    </td>
-                                    @if (item.IsActive == bool.Parse("true"))
+
+                                    @if (item.IsRead == "true")
                                     {
                                         <td>
-                                            <a href="#" class="btn btn-success btn-icon-split">
+                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId" class="btn btn-dark btn-icon-split">
                                                 <span class="icon text-white-50">
-                                                    <i class="fas fa-check"></i>
+                                                    <i class="fas fa-trash"></i>
                                                 </span>
-                                                <span class="text">@item.IsActive</span>
-                                            </a>
-
-
-                                        </td>
-                                    }
-                                    @if (item.IsActive == bool.Parse("false"))
-                                    {
-                                        <td>
-                                            <a href="#" class="btn btn-dark btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-exclamation-circle"></i>
-                                                </span>
-                                                <span class="text">@item.IsActive</span>
+                                                <span class="text">okunmadı olarak işaretle</span>
                                             </a>
                                         </td>
                                     }
+                                    else
+                                    {
+                                        <td>
+                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId" class="btn btn-warning btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-trash"></i>
+                                                </span>
+                                                <span class="text">okundu olarak işaretle</span>
+                                            </a>
+                                        </td>
+                                    }
+
                                     <td>
-                                        <a href="/AdminProduct/DeleteProduct/@item.ProductId" class="btn btn-danger btn-icon-split">
+                                        <a href="/AdminCategory/UpdateCategory/@item.NotificationId" class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
-                                                <i class="fas fa-trash"></i>
+                                                <i class="fas fa-info-circle"></i>
                                             </span>
                                             <span class="text">Sil</span>
                                         </a>
                                     </td>
+
                                     <td>
-                                        <a href="/AdminProduct/UpdateProduct/@item.ProductId" class="btn btn-warning btn-icon-split">
+                                        <a href="/AdminCategory/UpdateCategory/@item.NotificationId" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
                                             <span class="text">Güncelle</span>
                                         </a>
                                     </td>
-
                                 </tr>
                             }
 
 
                         </tbody>
                     </table>
-
+                    <a href="#" class="btn btn-primary">Yeni Kategori Girişi</a>
                 </div>
-
-
                 <div class="card-footer"></div>
-
             </div>
         </div>
     </div>
