@@ -138,6 +138,7 @@
     <Compile Include="Controllers\AdminNotificationController.cs" />
     <Compile Include="Controllers\AdminOpenDayHourController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminProfileController.cs" />
     <Compile Include="Controllers\AdminReservationController.cs" />
     <Compile Include="Controllers\AdminSocialMediaController.cs" />
     <Compile Include="Controllers\AdminTestimonialController.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Controllers\DetailLayoutController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\OpenDayHourController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
@@ -4871,6 +4873,8 @@
     <Content Include="Views\AdminReservation\ReservationList.cshtml" />
     <Content Include="Views\AdminReservation\UpdateReservation.cshtml" />
     <Content Include="Views\AdminNotification\NotificationList.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\AdminProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

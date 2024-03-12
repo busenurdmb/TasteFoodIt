@@ -13,6 +13,7 @@ namespace TasteFoodIt.Controllers
       
         TasteContext context = new TasteContext();
         // GET: AdminProduct
+        [Authorize]
         public ActionResult ProductList()
         {
             ViewBag.name = "Ürün";
