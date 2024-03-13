@@ -287,6 +287,7 @@
     <Content Include="Templates\img\Default1.jpeg" />
     <Content Include="Templates\img\default2.jpeg" />
     <Content Include="Templates\img\Default3.jpeg" />
+    <Content Include="Templates\img\Defaultm.jpeg" />
     <Content Include="Templates\img\Login.jpeg" />
     <Content Include="Templates\img\Menü.jpeg" />
     <Content Include="Templates\img\Profile.jpeg" />
