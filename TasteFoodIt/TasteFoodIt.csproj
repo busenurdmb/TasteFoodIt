@@ -140,6 +140,7 @@
     <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="Controllers\AdminProfileController.cs" />
     <Compile Include="Controllers\AdminReservationController.cs" />
+    <Compile Include="Controllers\AdminSliderController.cs" />
     <Compile Include="Controllers\AdminSocialMediaController.cs" />
     <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AdminMailController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\OpenDayHourController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
@@ -164,6 +166,7 @@
     <Compile Include="Entity\OpenDayHour.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\Reservation.cs" />
+    <Compile Include="Entity\Slider.cs" />
     <Compile Include="Entity\SocialMedia.cs" />
     <Compile Include="Entity\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +216,42 @@
     <Compile Include="Migrations\202403072222180_newtablesocial_mail.designer.cs">
       <DependentUpon>202403072222180_newtablesocial_mail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403122016415__slideradd.cs" />
+    <Compile Include="Migrations\202403122016415__slideradd.designer.cs">
+      <DependentUpon>202403122016415__slideradd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403122019216_newslider.cs" />
+    <Compile Include="Migrations\202403122019216_newslider.designer.cs">
+      <DependentUpon>202403122019216_newslider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403122027366_remove.cs" />
+    <Compile Include="Migrations\202403122027366_remove.designer.cs">
+      <DependentUpon>202403122027366_remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403122040005_aa1.cs" />
+    <Compile Include="Migrations\202403122040005_aa1.designer.cs">
+      <DependentUpon>202403122040005_aa1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403130141428__addcolomadmin.cs" />
+    <Compile Include="Migrations\202403130141428__addcolomadmin.designer.cs">
+      <DependentUpon>202403130141428__addcolomadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403131252007_addtablecontactcolumn.cs" />
+    <Compile Include="Migrations\202403131252007_addtablecontactcolumn.designer.cs">
+      <DependentUpon>202403131252007_addtablecontactcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403131318369_b.cs" />
+    <Compile Include="Migrations\202403131318369_b.designer.cs">
+      <DependentUpon>202403131318369_b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403131320357_mesaj.cs" />
+    <Compile Include="Migrations\202403131320357_mesaj.designer.cs">
+      <DependentUpon>202403131320357_mesaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403131321465_durumm.cs" />
+    <Compile Include="Migrations\202403131321465_durumm.designer.cs">
+      <DependentUpon>202403131321465_durumm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -242,6 +281,49 @@
     <Content Include="Templates\colorlib-error-404-4\css\style.css" />
     <Content Include="Templates\colorlib-error-404-4\index.html" />
     <Content Include="Templates\colorlib-error-404-4\readme.txt" />
+    <Content Include="Templates\Login_v3\css\main.css" />
+    <Content Include="Templates\Login_v3\css\util.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Templates\Login_v3\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Templates\Login_v3\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Templates\Login_v3\images\bg-01.jpg" />
+    <Content Include="Templates\Login_v3\images\icons\favicon.ico" />
+    <Content Include="Templates\Login_v3\index.html" />
+    <Content Include="Templates\Login_v3\js\main.js" />
+    <Content Include="Templates\Login_v3\vendor\animate\animate.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\css\animsition.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Templates\Login_v3\vendor\animsition\js\animsition.js" />
+    <Content Include="Templates\Login_v3\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\popper.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Templates\Login_v3\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Templates\Login_v3\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Templates\Login_v3\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\moment.js" />
+    <Content Include="Templates\Login_v3\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Templates\Login_v3\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Templates\Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Templates\Login_v3\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.css" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.js" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.min.css" />
+    <Content Include="Templates\Login_v3\vendor\select2\select2.min.js" />
     <Content Include="Templates\ruang-admin\.gitattributes" />
     <Content Include="Templates\ruang-admin\404.html" />
     <Content Include="Templates\ruang-admin\alerts.html" />
@@ -267,6 +349,7 @@
     <Content Include="Templates\ruang-admin\img\think.svg" />
     <Content Include="Templates\ruang-admin\img\undraw_posting_photo.svg" />
     <Content Include="Templates\ruang-admin\index.html" />
+    <Content Include="Templates\ruang-admin\js\demo\choosefilesprofile.js" />
     <Content Include="Templates\ruang-admin\js\demo\choosefileswritecript.js" />
     <Content Include="Templates\ruang-admin\js\demo\chart-area-demo.js" />
     <Content Include="Templates\ruang-admin\js\demo\chart-bar-demo.js" />
@@ -2199,6 +2282,8 @@
     <Content Include="Templates\tasteit-master\fonts\flaticon\font\flaticon.css" />
     <Content Include="Templates\tasteit-master\fonts\flaticon\font\flaticon.html" />
     <Content Include="Templates\tasteit-master\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="Templates\tasteit-master\formjs\Mail.js" />
+    <Content Include="Templates\tasteit-master\formjs\form.js" />
     <Content Include="Templates\tasteit-master\images\about.jpg" />
     <Content Include="Templates\tasteit-master\images\bg_1.jpg" />
     <Content Include="Templates\tasteit-master\images\bg_2.jpg" />
@@ -2420,7 +2505,6 @@
     <Content Include="Views\Default\PartialNavbarInfo.cshtml" />
     <Content Include="Views\Default\PartialNavbar.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
-    <Content Include="Views\Default\PartialSlider.cshtml" />
     <Content Include="Views\Default\PartialMenu.cshtml" />
     <Content Include="Views\Default\PartialTestimonial.cshtml" />
     <Content Include="Views\Default\PartialChef.cshtml" />
@@ -4875,6 +4959,89 @@
     <Content Include="Views\AdminNotification\NotificationList.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\AdminProfile\Index.cshtml" />
+    <Content Include="Views\AdminSlider\SliderList.cshtml" />
+    <Content Include="Views\AdminSlider\CreateSlider.cshtml" />
+    <Content Include="Views\Default\PartialOpenDayHour.cshtml" />
+    <Content Include="Views\Default\PartialSocialMedia.cshtml" />
+    <Content Include="Views\Default\PartialNavbarInfoSocialMedia.cshtml" />
+    <Content Include="Views\Default\PartialSlider.cshtml" />
+    <Content Include="Views\AdminOpenDayHour\OpenDayHourList.cshtml" />
+    <Content Include="Views\AdminOpenDayHour\CreateOpenDayHour.cshtml" />
+    <Content Include="Views\AdminOpenDayHour\UpdateOpenDayHour.cshtml" />
+    <Content Include="Views\AdminDashboard\Chart.cshtml" />
+    <Content Include="Views\AdminDashboard\chartjs.cshtml" />
+    <Content Include="Views\AdminDashboard\progresbar.cshtml" />
+    <Content Include="Views\AdminLayout\PartialMessage.cshtml" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Templates\Login_v3\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Templates\Login_v3\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Templates\Login_v3\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Templates\Login_v3\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\AdminSocialMedia\SocialMediaList.cshtml" />
+    <Content Include="Views\AdminSocialMedia\CreateSocialMedia.cshtml" />
+    <Content Include="Views\AdminSocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\AdminSlider\UpdateSlider.cshtml" />
+    <Content Include="Views\AdminNotification\CreateNotification.cshtml" />
+    <Content Include="Views\AdminNotification\UpdateNotification.cshtml" />
+    <Content Include="Views\AdminDashboard\Rezervasyon.cshtml" />
+    <Content Include="Views\AdminDashboard\Mesajlar.cshtml" />
+    <Content Include="Views\AdminMail\ContactList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4882,8 +5049,6 @@
     <Folder Include="Templates\ruang-admin\.git\objects\info\" />
     <Folder Include="Templates\ruang-admin\.git\objects\pack\" />
     <Folder Include="Templates\ruang-admin\.git\refs\tags\" />
-    <Folder Include="Views\AdminOpenDayHour\" />
-    <Folder Include="Views\AdminSocialMedia\" />
     <Folder Include="Views\OpenDayHour\" />
   </ItemGroup>
   <ItemGroup>
@@ -4932,6 +5097,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403072222180_newtablesocial_mail.resx">
       <DependentUpon>202403072222180_newtablesocial_mail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403122016415__slideradd.resx">
+      <DependentUpon>202403122016415__slideradd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403122019216_newslider.resx">
+      <DependentUpon>202403122019216_newslider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403122027366_remove.resx">
+      <DependentUpon>202403122027366_remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403122040005_aa1.resx">
+      <DependentUpon>202403122040005_aa1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403130141428__addcolomadmin.resx">
+      <DependentUpon>202403130141428__addcolomadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403131252007_addtablecontactcolumn.resx">
+      <DependentUpon>202403131252007_addtablecontactcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403131318369_b.resx">
+      <DependentUpon>202403131318369_b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403131320357_mesaj.resx">
+      <DependentUpon>202403131320357_mesaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403131321465_durumm.resx">
+      <DependentUpon>202403131321465_durumm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

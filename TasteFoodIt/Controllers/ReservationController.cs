@@ -8,6 +8,7 @@ using TasteFoodIt.Entity;
 
 namespace TasteFoodIt.Controllers
 {
+    [AllowAnonymous]
     public class ReservationController : Controller
     {
         TasteContext context = new TasteContext();

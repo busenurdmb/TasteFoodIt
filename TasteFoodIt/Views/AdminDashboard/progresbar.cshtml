@@ -1,0 +1,66 @@
+﻿
+<div class="col-xl-4 col-lg-5">
+    <div class="card mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Products Sold</h6>
+            
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <div class="small text-gray-500">
+                    Mesaj Sayısı
+                    <div class="small float-right"><b>@ViewBag.mesaj</b></div>
+                </div>
+                <div class="progress" style="height: 12px;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width:@(Convert.ToInt32(ViewBag.mesaj) * 10)%" aria-valuenow="@ViewBag.mesaj"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="small text-gray-500">
+                  Rezervasyon sayısı
+                    <div class="small float-right"><b>@ViewBag.rezevasyon</b></div>
+                </div>
+                <div class="progress" style="height: 12px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: @(Convert.ToInt32(ViewBag.rezevasyon) * 10)%" aria-valuenow="@ViewBag.rezevasyon"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="small text-gray-500">
+                   Müşteri sayısı
+                    <div class="small float-right"><b>@ViewBag.müşteri</b></div>
+                </div>
+                <div class="progress" style="height: 12px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: @(Convert.ToInt32(ViewBag.müşteri) * 10)%" aria-valuenow="55"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="small text-gray-500">
+                    Sosyal medya
+                    <div class="small float-right"><b>@ViewBag.social</b></div>
+                </div>
+                <div class="progress" style="height: 12px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: @(Convert.ToInt32(ViewBag.social) * 10)%" aria-valuenow="50"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="small text-gray-500">
+                   En pahalı ürün Fiyatı
+                    <div class="small float-right"><b>@ViewBag.productprice</b></div>
+                </div>
+                <div class="progress" style="height: 12px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: @ViewBag.productprice%" aria-valuenow="100"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a class="m-0 small text-primary card-link" href="#">
+                View More <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

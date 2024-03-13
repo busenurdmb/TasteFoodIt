@@ -1,50 +1,72 @@
-﻿
+﻿@model List<TasteFoodIt.Entity.Slider>
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
-@Html.Action("PartialHead","Default")
+@Html.Action("PartialHead", "Default")
 <body>
 
     @Html.Action("PartialNavbarInfo", "Default")
-
-
     @Html.Action("PartialNavbar", "Default")
 
-    <!-- END nav -->
 
 
-    @Html.Action("PartialSlider", "Default")
+
+    @*@Html.Action("PartialSlider", "Default")*@
+
+    <section class="hero-wrap">
+        <div class="home-slider owl-carousel js-fullheight">
+            @foreach (var item in Model)
+            {
+                <div class="slider-item js-fullheight" style="background-image:url(@item.ImageUrl);">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                            <div class="col-md-12 ftco-animate">
+                                <div class="text w-100 mt-5 text-center">
+                                    <span class="subheading">@item.ResturantName</span>
+                                    <h1>@item.Title</h1>
+                                    <span class="subheading-2">@item.Title2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+      </div>
+    </section>
+
 
     <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-                    <form action="#" class="appointment-form">
+                    <form id="reservationForm" class="appointment-form">
                         <h3 class="mb-3">Book your Table</h3>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
+                                    <input type="text" class="form-control" name="Name" placeholder="İsminiz">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input type="email" class="form-control" name="Email" placeholder="Email ">
+
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Phone">
+                                    <input type="text" class="form-control" name="Phone" placeholder="Telefon">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="input-wrap">
                                         <div class="icon"><span class="fa fa-calendar"></span></div>
-                                        <input type="text" class="form-control book_date" placeholder="Check-In">
+                                        <input type="text" class="form-control book_date" name="ReservationDate" placeholder="Tarih Seçin">
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +74,7 @@
                                 <div class="form-group">
                                     <div class="input-wrap">
                                         <div class="icon"><span class="fa fa-clock-o"></span></div>
-                                        <input type="text" class="form-control book_time" placeholder="Time">
+                                        <input type="text" class="form-control book_time" name="Time" placeholder="Saat">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +83,7 @@
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                            <select name="" id="" class="form-control">
+                                            <select name="GuestCount" id="" class="form-control">
                                                 <option value="">Guest</option>
                                                 <option value="">1</option>
                                                 <option value="">2</option>
@@ -75,7 +97,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="submit" value="Book Your Table Now" class="btn btn-white py-3 px-4">
+                                    <input id="btnReservationNow" value="Rezervasyon Yap" class="btn btn-white py-3  px-4">
                                 </div>
                             </div>
                         </div>
@@ -116,7 +138,7 @@
 
     @Html.Action("PartialFooter", "Default")
 
-    @Html.Action("PartialScript", "Default");
+    @Html.Action("PartialScript", "Default")
 
 </body>
 </html>

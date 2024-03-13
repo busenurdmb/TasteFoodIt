@@ -1,0 +1,62 @@
+﻿@model List<TasteFoodIt.Entity.Reservation>
+<div class="col-xl-8 col-lg-7 mb-4">
+    <div class="card">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Invoice</h6>
+            <a class="m-0 float-right btn btn-danger btn-sm" href="#">
+                View More <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Item</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td><a href="#">@item.ReservationId</a></td>
+                        <td>@item.Name</td>
+                        <td>@item.ReservationStatus</td>
+                        @if (item.ReservationStatus == "Onaylandı")
+                        {
+                            <td>
+                                <span class="badge badge-success">@item.ReservationStatus</span>
+                            </td>
+                        }
+                        @if (item.ReservationStatus == "Rezervasyon Alındı")
+                        {
+                            <td>
+                                <span class="badge badge-primary">@item.ReservationStatus</span>
+                            </td>
+                        }
+                        @if (item.ReservationStatus == "İptal Edildi")
+                        {
+                            <td>
+                                <span class="badge badge-danger">@item.ReservationStatus</span>
+                            </td>
+                        }
+                        @if (item.ReservationStatus == "Beklet")
+                        {
+                            <td>
+                                <span class="badge badge-dark">@item.ReservationStatus</span>
+                            </td>
+                        }
+                        <td><a href="/AdminReservation/UpdateReservation/@item.ReservationId" class="btn btn-sm btn-primary">Detail</a></td>
+                    </tr>
+                    }
+                    
+                  
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div>

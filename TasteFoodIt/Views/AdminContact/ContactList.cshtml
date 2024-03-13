@@ -33,6 +33,7 @@
                                 <th>Email</th>
                                 <th>Mesaj</th>
                                 <th>Tarih</th>
+                                <th>Durum</th>
                                 <th>Güncelle</th>
                                 <th>Sil</th>
 
@@ -46,12 +47,29 @@
 
                                 <td>@item.Subject</td>
                                 <td>@item.Email</td>
-                                <td>@item.Message.Substring(0,25)....</td>
+                                <td>@item.Message.Substring(0, 25)....</td>
                                 <td>
                                     <span class="badge badge-primary">@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</span>
 
                                 </td>
+                                @if (item.IsRead == true)
+                                {
+                                    <td>
+                                        <a href="/AdminContact/StatusChange/@item.ContactId">
 
+                                            <span class="text badge badge-primary">okunmadı olarak işaretle</span>
+                                        </a>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <a href="/AdminContact/StatusChange/@item.ContactId">
+
+                                            <span class="text badge badge-dark">okundu olarak işaretle</span>
+                                        </a>
+                                    </td>
+                                }
                                 <td>
                                     <a href="/AdminContact/UpdateContact/@item.ContactId" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">

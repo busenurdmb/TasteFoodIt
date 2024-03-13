@@ -1,0 +1,8 @@
+﻿@model List<TasteFoodIt.Entity.SocialMedia>
+<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+    @foreach (var item in Model)
+    {
+    <li class="ftco-animate"><a href="#"><span class="@item.IconUrl"></span></a></li>
+    }
+    
+</ul>

@@ -25,11 +25,19 @@ namespace TasteFoodIt.Controllers
         }
         public PartialViewResult PartialNavbar()
         {
+            ViewBag.isim = Session["name"];
+            ViewBag.img = Session["img"];
             ViewBag.notificationIsreadByFalseCount= tasteContext.Notifications.Where(x=>x.IsRead=="false").Count();
            var value= tasteContext.Notifications.Where(x=>x.IsRead== "false").ToList();
             return PartialView(value);
         }
-       
+        public PartialViewResult PartialMessage()
+        {
+
+            ViewBag.contactIsreadByFalseCount = tasteContext.Contacts.Where(x => x.IsRead == false).Count();
+            var value = tasteContext.Contacts.Where(x => x.IsRead == false).ToList();
+            return PartialView(value);
+        }
         public PartialViewResult PartialFooter()
         {
             return PartialView();

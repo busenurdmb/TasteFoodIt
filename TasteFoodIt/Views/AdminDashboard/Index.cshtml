@@ -14,7 +14,7 @@
         </ol>
     </div>
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card h-100">
                 <div class="card-body">
@@ -94,6 +94,35 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-8 col-lg-7">
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Ürün-Fiyat İstatisliği</h6>
+
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @Html.Action("progresbar", "AdminDashboard")
+        @Html.Action("Rezervasyon", "AdminDashboard")
+        @Html.Action("Mesajlar", "AdminDashboard")
     </div>
 </div>
 
+
+
+
+
+<script src="~/Templates/ruang-admin/vendor/chart.js/Chart.js"></script>
+
+<script src="~/Templates/ruang-admin/vendor/jquery/jquery.js"></script>
+
+
+
+
+@Html.Action("chartjs", "AdminDashboard")

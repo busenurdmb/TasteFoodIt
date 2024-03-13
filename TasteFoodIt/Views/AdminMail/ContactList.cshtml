@@ -1,0 +1,90 @@
+﻿@model List<TasteFoodIt.Entity.Mail>
+
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">@ViewBag.name Listesi</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Anasayfa</a></li>
+            <li class="breadcrumb-item">@ViewBag.name</li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.name İşlemleri</li>
+        </ol>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <!-- Simple Tables -->
+            <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">@ViewBag.name</h6>
+                </div>
+              <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>*</th>
+                                    <th>Mail</th>
+                                    <th>Durumu</th>
+                                     <th>Sil</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td><a href="#">@item.MailId</a></td>
+                                    <td>@item.Email</td>
+                                    
+                                    @if (item.Status == true)
+                                    {
+                                        <td>
+
+
+                                            <span class="text badge badge-primary">True</span>
+
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+
+                                            <span class="text badge badge-dark">false</span>
+
+                                        </td>
+                                    }
+                                    <td>
+                                        <a href="/AdminAbout/DeleteAbout/@item.MailId" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                            <span class="text">Sil</span>
+                                        </a>
+                                    </td>
+                                   
+                                </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                
+
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Row-->
+
+
+</div>
+

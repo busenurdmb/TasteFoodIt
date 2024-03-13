@@ -4,9 +4,6 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-
-
-
 <div class="container-fluid" id="container-wrapper">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">@ViewBag.name Listesi</h1>
@@ -28,8 +25,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th>*</th>
-                                <th>Kategori Adı</th>
-                                <th>Kategoriye Ait ürünler</th>
+                                <th>Bildirim Açıklaması</th>
+                                <th>Durumu</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
                             </tr>
@@ -44,28 +41,24 @@
                                     @if (item.IsRead == "true")
                                     {
                                         <td>
-                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId" class="btn btn-dark btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">okunmadı olarak işaretle</span>
+                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId" >
+                                                
+                                                <span class="text badge badge-primary">okunmadı olarak işaretle</span>
                                             </a>
                                         </td>
                                     }
                                     else
                                     {
                                         <td>
-                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId" class="btn btn-warning btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">okundu olarak işaretle</span>
+                                            <a href="/AdminNotification/StatusChangeNotification/@item.NotificationId">
+                                               
+                                                <span class="text badge badge-dark">okundu olarak işaretle</span>
                                             </a>
                                         </td>
                                     }
 
                                     <td>
-                                        <a href="/AdminCategory/UpdateCategory/@item.NotificationId" class="btn btn-danger btn-icon-split">
+                                        <a href="/AdminNotification/UpdateNotification/@item.NotificationId" class="btn btn-danger btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
@@ -74,7 +67,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="/AdminCategory/UpdateCategory/@item.NotificationId" class="btn btn-success btn-icon-split">
+                                        <a href="/AdminNotification/UpdateNotification/@item.NotificationId" class="btn btn-success btn-icon-split">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-info-circle"></i>
                                             </span>
@@ -87,7 +80,7 @@
 
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-primary">Yeni Kategori Girişi</a>
+                    <a href="/AdminNotification/CreateNotification" class="btn btn-primary">Bildirim Ekle</a>
                 </div>
                 <div class="card-footer"></div>
             </div>

@@ -8,6 +8,9 @@ namespace TasteFoodIt
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //Proje bazında Authorization işlemi için
+            filters.Add(new AuthorizeAttribute());
+
         }
     }
 }

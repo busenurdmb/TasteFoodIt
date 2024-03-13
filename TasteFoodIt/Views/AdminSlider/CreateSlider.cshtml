@@ -1,0 +1,57 @@
+﻿@model TasteFoodIt.Entity.Slider
+@{
+    ViewBag.Title = "CreateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">@ViewBag.name Ekleme Sayfası</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Anasayfa</a></li>
+            <li class="breadcrumb-item">@ViewBag.name</li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.name İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Form Basic -->
+            <div class="card mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">@ViewBag.name Ekleme Paneli</h6>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+
+                            <label>Restorant İsmi</label>
+                            @Html.TextBoxFor(x => x.ResturantName, new { @class = "form-control" })
+
+                            <label>Başlık 1</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+
+                            <label>Başlık 2</label>
+                            @Html.TextBoxFor(x => x.Title2, new { @class = "form-control" })
+
+                            <label for="exampleCategory"> Fotoğraf</label>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="ImageUrl" onchange="updateFileName(this)">
+                                    <label class="custom-file-label" for="customFile">Seç</label>
+                                </div>
+                            </div>
+
+                           </div>
+                        <button type="submit" class="btn btn-primary"> Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Templates/ruang-admin/js/demo/choosefileswritecript.js"></script>
+
+
+

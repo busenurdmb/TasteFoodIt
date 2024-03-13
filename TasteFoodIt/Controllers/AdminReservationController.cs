@@ -34,6 +34,13 @@ namespace TasteFoodIt.Controllers
             context.SaveChanges();
             return RedirectToAction("ReservationList");
         }
+        public ActionResult BekletReservation(int id)
+        {
+            var values = context.Reservations.Find(id);
+            values.ReservationStatus = "Beklet";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
         [HttpGet]
         public ActionResult UpdateReservation(int id)
         {

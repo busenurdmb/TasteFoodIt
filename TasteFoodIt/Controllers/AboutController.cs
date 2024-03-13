@@ -7,6 +7,7 @@ using TasteFoodIt.Context;
 
 namespace TasteFoodIt.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         TasteContext context = new TasteContext();
@@ -21,7 +22,9 @@ namespace TasteFoodIt.Controllers
         public PartialViewResult PartialAboutStatistic()
         {
             ViewBag.FoodCount = context.Products.Count();
-            
+            ViewBag.ChefCount = context.Chef.Count();
+            ViewBag.CategoryCount=context.Categories.Count();
+            ViewBag.TestimonialCount = context.Testimonials.Count();
             return PartialView();
         }
     

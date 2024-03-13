@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TasteFoodIt.Context;
+using TasteFoodIt.Entity;
 
 namespace TasteFoodIt.Controllers
 {
@@ -28,7 +29,7 @@ namespace TasteFoodIt.Controllers
                 value.IsRead = "true";
             }
             context.SaveChanges();
-            return RedirectToAction("NotificationList","AdminNotification");
+            return RedirectToAction("NotificationList", "AdminNotification");
         }
         public ActionResult NotificationIsReadTrue(int id)
         {
@@ -44,5 +45,56 @@ namespace TasteFoodIt.Controllers
             context.SaveChanges();
             return RedirectToAction("NotificanList");
         }
+        [HttpGet]
+        public ActionResult CreateNotification()
+        {
+            ViewBag.name = "Bildirimler";
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateNotification(Notification Notification)
+        {
+
+            Notification.IsRead = "false";
+            Notification.Date= DateTime.Now;
+            context.Notifications.Add(Notification);
+            context.SaveChanges();
+            return RedirectToAction("NotificationList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateNotification(int id)
+        {
+            ViewBag.name = "Bildirimler";
+
+            var value = context.Notifications.Find(id);
+
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult UpdateNotification(Notification Notification)
+        {
+         
+           
+            var value = context.Notifications.Find(Notification.NotificationId);
+            value.Description = Notification.Description;
+            value.NotificationIcon = Notification.NotificationIcon;
+            value.IsRead = "True";
+            value.IconCirleColor = Notification.IconCirleColor;
+            value.Date=DateTime.Now;
+            context.SaveChanges();
+            return RedirectToAction("NotificationList");
+        }
+
+        public ActionResult DeleteNotification(int id)
+        {
+            var value = context.Notifications.Find(id);
+            context.Notifications.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("NotificationList");
+        }
+
+
     }
 }

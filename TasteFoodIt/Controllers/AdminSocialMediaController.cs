@@ -15,6 +15,7 @@ namespace TasteFoodIt.Controllers
         
         public ActionResult SocialMediaList()
         {
+            ViewBag.name = "Sosyal Medya";
             var value = context.SocialMedias.ToList();
             return View(value);
         }
@@ -22,11 +23,14 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult CreateSocialMedia()
         {
+            ViewBag.name = "Sosyal Medya";
+
             return View();
         }
         [HttpPost]
         public ActionResult CreateSocialMedia(SocialMedia socialMedia)
         {
+
             socialMedia.Status = true;
             context.SocialMedias.Add(socialMedia);
             context.SaveChanges();
@@ -36,6 +40,8 @@ namespace TasteFoodIt.Controllers
         [HttpGet]
         public ActionResult UpdateSocialMedia(int id)
         {
+            ViewBag.name = "Sosyal Medya";
+
             var value = context.SocialMedias.Find(id);
 
             return View(value);

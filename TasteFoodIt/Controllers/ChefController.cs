@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace TasteFoodIt.Controllers
 {
+    [AllowAnonymous]
     public class ChefController : Controller
     {
         // GET: Chef

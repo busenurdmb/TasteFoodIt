@@ -7,6 +7,7 @@ using TasteFoodIt.Context;
 
 namespace TasteFoodIt.Controllers
 {
+    [AllowAnonymous]
     //Anasayfa
     public class DefaultController : Controller
     {
@@ -14,7 +15,8 @@ namespace TasteFoodIt.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            return View();
+            var value = context.Sliders.ToList();
+            return PartialView(value);
         }
         public PartialViewResult PartialHead()
         {
@@ -31,6 +33,11 @@ namespace TasteFoodIt.Controllers
             ViewBag.description = context.Addresses.Select(x => x.Description).FirstOrDefault();
             return PartialView();
         }
+        public PartialViewResult PartialNavbarInfoSocialMedia()
+        {
+            var value = context.SocialMedias.ToList();
+            return PartialView(value);
+        }
         public PartialViewResult PartialNavbar()
         {
 
@@ -38,8 +45,9 @@ namespace TasteFoodIt.Controllers
         }
         public PartialViewResult PartialSlider()
         {
-
-            return PartialView();
+            var value = context.Sliders.ToList();
+            return PartialView(value);
+        
         }
         public PartialViewResult PartialAbout()
         {
@@ -83,6 +91,15 @@ namespace TasteFoodIt.Controllers
         {
             return PartialView();
         }
-
+        public PartialViewResult PartialOpenDayHour()
+        {
+            var value = context.openDayHours.ToList();
+            return PartialView(value);
+        }
+        public PartialViewResult PartialSocialMedia()
+        {
+            var value = context.SocialMedias.ToList();
+            return PartialView(value);
+        }
     }
 }

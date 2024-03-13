@@ -1,23 +1,18 @@
-﻿<div class="wrap">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-12 col-md d-flex align-items-center">
-                <p class="mb-0 phone"><span class="mailus">Telefon:</span> <a href="#">@ViewBag.phone</a> or <span class="mailus">Email:</span> <a href="#">@ViewBag.email</a></p>
-            </div>
-            <div class="col-12 col-md d-flex justify-content-md-end">
-                <p class="mb-0">
-                   @ViewBag.description
-                </p>
-                <div class="social-media">
-                    <p class="mb-0 d-flex">
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-                    </p>
+﻿
+                <div class="wrap">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-12 col-md d-flex align-items-center">
+                                <p class="mb-0 phone"><span class="mailus">Telefon:</span> <a href="#">@ViewBag.phone</a> or <span class="mailus">Email:</span> <a href="#">@ViewBag.email</a></p>
+                            </div>
+                            <div class="col-12 col-md d-flex justify-content-md-end">
+                                <p class="mb-0">
+                                    @ViewBag.description
+                                </p>
+                                @Html.Action("PartialNavbarInfoSocialMedia", "Default")
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 

@@ -1,0 +1,29 @@
+﻿@model List<TasteFoodIt.Entity.Contact>
+<!-- Message From Customer-->
+<div class="col-xl-4 col-lg-5 ">
+    <div class="card">
+        <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-light">Gelen Mesajlar</h6>
+        </div>
+        <div>
+            @foreach (var item in Model)
+            {
+            <div class="customer-message align-items-center">
+                <a class="font-weight-bold" href="#">
+                    <div class="text-truncate message-title">
+                     @item.Message
+                    </div>
+                    <div class="small text-gray-500 message-time font-weight-bold">@(((DateTime)item.SendDate).ToString("dd.MM.yyyy"))</div>
+                </a>
+            </div>
+            }
+            
+           
+            <div class="card-footer text-center">
+                <a class="m-0 small text-primary card-link" href="/AdminContact/ContactList">
+                    View More <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

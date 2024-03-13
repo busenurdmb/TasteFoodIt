@@ -1,0 +1,11 @@
+﻿@model List<TasteFoodIt.Entity.SocialMedia>
+<div class="social-media">
+    <p class="mb-0 d-flex">
+        @foreach (var item in Model)
+        {
+            <a href="#" class="d-flex align-items-center justify-content-center"><span class="@item.IconUrl"><i class="sr-only">@item.PlatformName</i></span></a>
+        }
+
+
+    </p>
+</div>
