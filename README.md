@@ -1,4 +1,4 @@
-#  Devfolio
+#  TasteFoodlt
 Bu proje My Yazılım Akademi Bünyesinde Murat Yücedağ Eğitmenliği tarafından  Asp.Net MVC Code First kullanarak yapılan 2 .projedir.
 
 # Projeye Genel Bakış
